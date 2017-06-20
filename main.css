@@ -7,3 +7,7 @@
     border-color: green;
     color: green;
 }
+
+.ng-cloak, [ng-cloak], [ng\:cloak]{
+    display: none !important;
+}

@@ -6,7 +6,7 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" href="main.css">
     </head>
-    <body>
+    <body ng-cloak>
         <nav class="navbar navbar-inverse">
             <div class="container">
                 <div class="navbar-header"></div>
@@ -54,6 +54,15 @@
                 <li ng-repeat="name in names track by $index"> {{ name }}</li>
             </ul>
         </div>
+        <hr>
+        <div  class="container" ng-init="people=[{'name': 'Kat', 'city':  'Manilla', 'id': 1}, {'name': 'Nat', 'city': 'Manilla', 'id': 2}, {'name': 'Choah', 'city': 'Seole', 'id': 3}, {'name':'Ellen', 'city': 'Taipei', 'id': 4}, {'name': 'Aiko', 'city': 'Nagoya', 'id': 5}, {'name': 'Suzi', 'city': 'Shanghai', 'id': 6}]">
+            <select ng-model="peep" ng-options="peep.name group by peep.city for peep in people"></select>
+            <p>You have selected {{ peep.name }}</p>
+            <br>
+            <select ng-model="peep" ng-options="peep.city for peep in people"></select>
+            
+        </div>
+        <br>
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
     </body>
 </html>
