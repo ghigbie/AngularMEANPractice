@@ -34,15 +34,17 @@
             <p ng-show="guess != number2" ng-class="{green}">Incorrect</p>
         </div>
         <hr>
-        <div ng-init="peeps=[{'name': 'Kat', 'city':  'Manilla'}, {'name': 'Nat', 'city': 'Manilla'}, {'name': 'Choah', 'city': 'Seole'}, {'name':'Ellen', 'city': 'Taipei'}, {'name': 'Aiko', 'city': 'Nagoya'}, {'name': 'Suzi', 'city': 'Shanghai'}]">
+        <div ng-init="peeps=[{'name': 'Kat', 'city':  'Manilla', 'id': 1}, {'name': 'Nat', 'city': 'Manilla', 'id': 2}, {'name': 'Choah', 'city': 'Seole', 'id': 3}, {'name':'Ellen', 'city': 'Taipei', 'id': 4}, {'name': 'Aiko', 'city': 'Nagoya', 'id': 5}, {'name': 'Suzi', 'city': 'Shanghai', 'id': 6}]">
             <table class="table">
                 <tr>
                     <th>Name</th>
                     <th>City</th>
+                    <th>ID</th>
                 </tr>
                 <tr ng-repeat="peep in peeps">
                     <td> {{ peep.name }}</td>
                     <td> {{ peep.city }}</td>
+                    <td ng-class="{red: $even, green: $odd}"> {{ peep.id }}</td>
                 </tr>
             </table>
         </div>
