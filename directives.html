@@ -4,6 +4,7 @@
         <meta charset="utf-8">
         <title>Directives in Angular</title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="main.css">
     </head>
     <body>
         <nav class="navbar navbar-inverse">
@@ -28,9 +29,9 @@
         </div>
         <div class="container" ng-init="number2 = 19">
             <h3>Guess the number</h3>
-            <input type="text" ng-model="guess">
-            <p ng-hide="guess != number2">Correct</p>
-            <p ng-show="guess != number2">Incorrect</p>
+            <input type="text" ng-model="guess" ng-class="{red: guess !=number2, green: guess ==number2}">
+            <p ng-hide="guess != number2" ng-class="{red}">Correct</p>
+            <p ng-show="guess != number2" ng-class="{green}">Incorrect</p>
         </div>
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
     </body>
