@@ -13,13 +13,24 @@
                 </div>
             </div>
         </nav>
-        <div class="container main-content" ng-init="number=0">
+        <div class="container main-content" ng-init="number = 0">
             <h2>{{ number }}</h2>
+            <br>
             <button class="btn btn-primary" ng-click="number=number+1">+1</button>
             <button class="btn btn-warning" ng-click="number=number-1">-1</button>
             <br>
-            <input type="text" name="name" ng-model="name"/>
-            <h3>Hello, this is {{ name }}</h3>
+            <br>
+            <!--<input type="text" name="name" ng-model="name"/>-->
+            <!--<h3>Hello, this is {{ name }}</h3>-->
+            <hr>
+            <h2>Show me the paragraph</h2><input type="checkbox" ng-model="isChecked">
+            <p ng-show="isChecked">You can see me!</p>
+        </div>
+        <div class="container" ng-init="number2 = 19">
+            <h3>Guess the number</h3>
+            <input type="text" ng-model="guess">
+            <p ng-hide="guess != number2">Correct</p>
+            <p ng-show="guess != number2">Incorrect</p>
         </div>
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
     </body>
