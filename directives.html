@@ -33,6 +33,19 @@
             <p ng-hide="guess != number2" ng-class="{red}">Correct</p>
             <p ng-show="guess != number2" ng-class="{green}">Incorrect</p>
         </div>
+        <hr>
+        <div ng-init="peeps=[{'name': 'Kat', 'city':  'Manilla'}, {'name': 'Nat', 'city': 'Manilla'}, {'name': 'Choah', 'city': 'Seole'}, {'name':'Ellen', 'city': 'Taipei'}, {'name': 'Aiko', 'city': 'Nagoya'}, {'name': 'Suzi', 'city': 'Shanghai'}]">
+            <table class="table">
+                <tr>
+                    <th>Name</th>
+                    <th>City</th>
+                </tr>
+                <tr ng-repeat="peep in peeps">
+                    <td> {{ peep.name }}</td>
+                    <td> {{ peep.city }}</td>
+                </tr>
+            </table>
+        </div>
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
     </body>
 </html>
