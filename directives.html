@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app>
     <head>
         <meta charset="utf-8">
         <title>Directives in Angular</title>
@@ -13,8 +13,13 @@
                 </div>
             </div>
         </nav>
-        <div class="container main-content">
-            
+        <div class="container main-content" ng-init="number=0">
+            <h2>{{ number }}</h2>
+            <button class="btn btn-primary" ng-click="number=number+1">+1</button>
+            <button class="btn btn-warning" ng-click="number=number-1">-1</button>
+            <br>
+            <input type="text" name="name" ng-model="name"/>
+            <h3>Hello, this is {{ name }}</h3>
         </div>
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
     </body>
