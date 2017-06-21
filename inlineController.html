@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" ng-app>
+    <head>
+        <meta charset="utf-8">
+        <title>Filters in Angualr</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    </head>
+    <body ng-cloak>
+        <nav class="navbar navbar-inverse">
+            <div class="container">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="/">Controllers &amp; Scope</a>
+                </div>
+            </div>
+        </nav>
+        <div class="container main-content" 
+        ng-init="foods = [
+        {food: 'pizza', cost: '3', city: 'Milan', ukCost: 5, date: 1498072667},
+        {food: 'salad', cost: '5', city: 'New York', ukCost: 7, date: 6548072682},
+        {food: 'crab cake', cost: '15', city: 'Baltimore', ukCost: 20, date: 7348072682},
+        {food: 'crab cake', cost: '14', city: 'Baltimore', ukCost: 20, date: 7348072682},
+        {food: 'crab cake', cost: '13', city: 'Baltimore', ukCost: 20, date: 7348072682}
+        ]">
+            <table class="table">
+                <tr>
+                    <th>Food</th>
+                    <th>Cost</th>
+                    <th>City</th>
+                    <th>UK Cost</th>
+                    <th>Date</th>
+                </tr>
+                <tr ng-repeat="food in foods | limitTo: 5 | orderBy: ['-food', 'cost']">
+                    <td> {{ food.food | uppercase }} </td>
+                    <td> {{ food.cost | currency}} </td>
+                    <td> {{ food.city }} </td>
+                    <td> {{ food.ukCost | currency:"£"  }} </td>
+                    <td> {{ food.date | date: "medium" }} </td>
+                </tr>
+            </table>
+            <br>
+            <input type="text" ng-model="search.food">
+            <br>
+            <br>
+            <p>Free text search: <input type="text" ng-model="search.$"></p>
+            <ul>
+                <li ng-repeat="food in foods | filter: search"> {{ food.food }} {{ food.cost }}</li>
+            </ul>
+        </div>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    </body>
+</html>
