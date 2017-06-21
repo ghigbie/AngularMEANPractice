@@ -17,8 +17,8 @@
         <div class="container main-content" ng-controller="MyController">
             {{ number }}
             <hr>
-        <button  class="btn btn-primary" ng-click="increment()">Add + +</button>
-        <button  class="btn btn-danger" ng-click="decrement()">Subtract - -</button>
+        <button  class="btn btn-primary" ng-click="increment(5)">Add + +</button>
+        <button  class="btn btn-danger" ng-click="decrement(10)">Subtract - -</button>
         </div>
         
         <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
@@ -29,12 +29,12 @@
             function MyController($scope){
                 $scope.number = 0;
              
-                $scope.increment = function(){
-                    $scope.number = $scope.number +1;
+                $scope.increment = function(amount){
+                    $scope.number = $scope.number + amount;
                 };
                 
-                $scope.decrement = function(){
-                    $scope.number = $scope.number -1; 
+                $scope.decrement = function(amount){
+                    $scope.number = $scope.number - amount; 
                 };
             }
         </script>
