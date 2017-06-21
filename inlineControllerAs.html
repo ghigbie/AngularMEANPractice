@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+    <head>
+        <meta charset="utf-8">
+        <title>Controllers As &amp; $scope</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    </head>
+    </head>
+    <body ng-cloak>
+         <nav class="navbar navbar-inverse">
+            <div class="container">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="/">Controllers As &amp; $scope</a>
+                </div>
+            </div>
+        </nav>
+        <div class="container main-content" ng-controller="MyController as MyCtrl">
+            <div ng-controller="MySecondController as MySecondCtrl">
+                {{ MyCtrl.name }}
+                <br>
+                {{ MySecondCtrl.name }}
+            </div>
+        </div>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+        <script type="text/javascript">
+            /* global angular */
+            angular.module('myApp', [])
+                .controller('MyController', MyController)
+                .controller('MySecondController', MySecondController);
+        
+            function MyController(){
+                var vm = this;
+                vm.name = 'Orin';
+            }
+            
+            function MySecondController(){
+                var vm = this;
+                vm.name = 'Kaushik';
+            }
+                
+        </script>
+    </body>
+</html>
