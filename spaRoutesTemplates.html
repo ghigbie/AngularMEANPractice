@@ -10,12 +10,13 @@
          <nav class="navbar navbar-inverse">
             <div class="container">
                 <div class="navbar-header">
-                    <a class="navbar-brand" href="/">SPAs, Routes, &amp; templates in Angular</a>
+                    <a class="navbar-brand" href="/">SPAs, Routes, &amp; Templates in Angular</a>
                 </div>
             </div>
         </nav>
         <div class="container main-content" ng-controller="MyController as MyCtrl">
             {{ MyCtrl.name }}
+            <div ng-view></div>
         </div>
         
         <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
